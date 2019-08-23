@@ -6,7 +6,6 @@ import axios from 'axios';
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [ characters, setCharacters ] = useState([])
-  console.log(characters)
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
     axios
@@ -46,12 +45,3 @@ export default function CharacterList() {
     </section>
   );
 }
-
-
-{/* <div key={char.id}>
-  <img src={char.image} alt=""/>
-  <h2>{char.name}</h2>
-  <p>{char.species} {char.status}</p>
-  <p>{char.location.name}</p>
-  <p>{char.origin.name}</p>
-</div> */}

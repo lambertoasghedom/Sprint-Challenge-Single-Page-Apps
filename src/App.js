@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import { Route, NavLink } from 'react-router-dom';
 
 import TabNav from "./components/TabNav.js";
 import Header from "./components/Header.js";
@@ -11,7 +12,6 @@ import LocationCard from "./components/LocationCard.js";
 export default function App() {
 
   const [location, setLocation] = useState([])
-  console.log(location)
 
   useEffect(() => {
     axios.get('https://rickandmortyapi.com/api/location/')
@@ -22,9 +22,9 @@ export default function App() {
     <main>
       <Header />
       <TabNav />
-      <WelcomePage />
-      {/* <CharacterList /> */}
-      <LocationCard location={location}/>
+      <Route exact path="/" component={WelcomePage}/>
+      <Route path="/characters" component={CharacterList}/>
+      <Route path="/locations" render={ () => <LocationCard locations={location} />}/>
     </main>
   );
 }
