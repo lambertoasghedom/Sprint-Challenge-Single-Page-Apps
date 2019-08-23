@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 import TabNav from "./components/TabNav.js";
 import Header from "./components/Header.js";
@@ -21,7 +21,21 @@ export default function App() {
   return (
     <main>
       <Header />
-      <TabNav />
+      {/* <TabNav /> */}
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/characters">Characters</Link>
+        </li>
+        <li>
+          <Link to="/locations">Locations</Link>
+        </li>
+        <li>
+          <Link to="/episodes">Episodes</Link>
+        </li>
+      </ul>
       <Route exact path="/" component={WelcomePage}/>
       <Route path="/characters" component={CharacterList}/>
       <Route path="/locations" render={ () => <LocationCard locations={location} />}/>
