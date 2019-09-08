@@ -1,10 +1,12 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
 
+import '../App.css'
+
 export default function LocationCard({ locations }) {
   console.log(locations)
   return (
-    <div>
+    <div className="location-container">
       {locations.map((location) => {
         return (
           <Card
