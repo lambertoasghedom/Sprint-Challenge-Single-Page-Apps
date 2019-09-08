@@ -8,6 +8,8 @@ import WelcomePage from "./components/WelcomePage.js";
 import CharacterList from "./components/CharacterList.js";
 import LocationCard from "./components/LocationCard.js";
 
+import './App.css'
+
 
 export default function App() {
 
@@ -22,7 +24,7 @@ export default function App() {
     <main>
       <Header />
       {/* <TabNav /> */}
-      <ul>
+      <ul className="list-header">
         <li>
           <Link to="/">Home</Link>
         </li>
