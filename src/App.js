@@ -15,7 +15,7 @@ export default function App() {
 
   useEffect(() => {
     axios.get('https://rickandmortyapi.com/api/location/')
-      .then(data => setLocation(data.data.results))
+      .then(res => setLocation(res.data.results))
   }, [])
 
   return (
@@ -36,6 +36,7 @@ export default function App() {
           <Link to="/episodes">Episodes</Link>
         </li>
       </ul>
+      
       <Route exact path="/" component={WelcomePage}/>
       <Route path="/characters" component={CharacterList}/>
       <Route path="/locations" render={ () => <LocationCard locations={location} />}/>
